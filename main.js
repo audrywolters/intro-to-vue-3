@@ -21,5 +21,18 @@ const app = Vue.createApp({
 			// description: 'Really Cool Socks'
 			// url: 'https://github.com/audrywolters'
 		}
+	},
+	methods: {
+		addToCart() {
+			this.cart += 1
+		},
+		removeFromCart() {
+			if (this.cart > 0) {
+				this.cart -= 1
+			}
+		},
+		updateImage(variantImage) {
+			this.image = variantImage
+		}
 	}
 })

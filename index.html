@@ -17,6 +17,7 @@
       <div class="product-display">
         <div class="product-container">
           <div class="product-image">
+            <!-- how does it know to update the image here (on mouseover) -->
             <img v-bind:src="image">
           </div>
           <div class="product-info">
@@ -26,9 +27,11 @@
             <ul>
               <li v-for="detail in details">{{ detail }}</li>
             </ul>
+            <!-- how does it know to update the socks image in the img tag, not on this div? -->
             <div v-for="variant in variants" :key="variant.id" @mouseover="updateImage(variant.image)">{{ variant.color }}</div>
             <button class="button" @click="addToCart">Add to Cart</button>
             <button class="button" @click="removeFromCart">Remove from Cart</button>
+
             <!-- <ul>
               <li v-for="size in sizes" :key="size.type">{{ size.type }}</li>
             </ul> -->

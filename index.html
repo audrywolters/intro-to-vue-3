@@ -18,7 +18,10 @@
         <div class="product-container">
           <div class="product-image">
             <!-- how does it know to update the image here (on mouseover) -->
-            <img v-bind:src="image">
+            <img 
+              v-bind:src="image"
+              :class="{ 'out-of-stock-img': !inStock }"
+            >
           </div>
           <div class="product-info">
             <h1>{{ product }}</h1>

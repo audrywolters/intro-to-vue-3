@@ -17,24 +17,23 @@
       <div class="product-display">
         <div class="product-container">
           <div class="product-image">
-            <!-- how does it know to update the image here (on mouseover) -->
             <img 
               v-bind:src="sockImage"
               :class="{ 'out-of-stock-img': !inStock }"
-            >
+            > <!-- opacity down if out of stock -->
           </div>
           <div class="product-info">
-            <h1>{{ product }}</h1>
+            <h1>{{ title }}</h1>
             <p v-if="inStock">In Stock</p>
             <p v-else>Out of Stock</p>
             <ul>
               <li v-for="detail in details">{{ detail }}</li>
             </ul>
-            <!-- how does it know to update the socks image in the img tag, not on this div? -->
+
             <div 
-              v-for="variant in variants" 
+              v-for="(variant, index) in variants" 
               :key="variant.id" 
-              @mouseover="updateImage(variant.image)"
+              @mouseover="updateVariant(index)"
               class="color-circle"
               :style="{ backgroundColor: variant.color }">
             </div>

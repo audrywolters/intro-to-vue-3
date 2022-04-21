@@ -9,8 +9,9 @@ const app = Vue.createApp({
 			variants: [
 				{ id: 2234, color: 'green', image: './assets/images/socks_green.jpg', quantity: 50 },
 				{ id: 2235, color: 'blue',  image: './assets/images/socks_blue.jpg',  quantity: 0 },
-			]
+			],
 
+			onSale: true
 			// sizes: [
 			// 	{ id: 100, type: 'small'},
 			// 	{ id: 101, type: 'medium'},
@@ -44,6 +45,13 @@ const app = Vue.createApp({
 		},
 		inStock() {
 			return this.variants[this.selectedVariant].quantity
+		},
+		isOnSale() {
+			if (this.onSale) {
+				return this.brand + ' ' + this.product + ' is on sale!'
+			}
+
+			return ''
 		}
 	}
 })

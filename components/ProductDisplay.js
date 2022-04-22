@@ -26,11 +26,7 @@ app.component('product-display', {
 
 				<p>Shipping: {{ shipping }}</p>
 
-				<product-details></product-details>
-
-				<ul>
-				<li v-for="detail in details">{{ detail }}</li>
-				</ul>
+				<product-details :details="details"></product-details>
 
 				<div 
 					v-for="(variant, index) in variants" 

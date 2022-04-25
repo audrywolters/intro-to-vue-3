@@ -26,7 +26,7 @@ app.component('product-display', {
 
 				<p>Shipping: {{ shipping }}</p>
 
-			
+				<product-details :details="details"></product-details>
 
 				<div 
 					v-for="(variant, index) in variants" 

@@ -27,7 +27,7 @@ app.component('product-display', {
 				<p>Shipping: {{ shipping }}</p>
 
 				<ul>
-				<li v-for="detail in details">{{ detail }}</li>
+					<li v-for="detail in details">{{ detail }}</li>
 				</ul>
 
 				<div 

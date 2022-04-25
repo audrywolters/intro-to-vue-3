@@ -79,12 +79,6 @@ app.component('product-display', {
 		}
 	},
 	computed: {
-		title() {
-			return this.brand + ' ' + this.product
-		},
-		sockImage() {
-			return this.variants[this.selectedVariant].image
-		},
 		inStock() {
 			return this.variants[this.selectedVariant].quantity
 		},
@@ -93,6 +87,12 @@ app.component('product-display', {
 				return 'Free'
 			}
 			return 2.99
+		},
+		sockImage() {
+			return this.variants[this.selectedVariant].image
+		},
+		title() {
+			return this.brand + ' ' + this.product
 		}
 	}
 })

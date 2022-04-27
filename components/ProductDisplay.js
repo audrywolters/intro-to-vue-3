@@ -50,10 +50,11 @@ app.component('product-display', {
 		</div>`,
 	data() {
 		return {
-			product: 'Socks',
 			brand: 'Vue Mastery',
-			selectedVariant: 0,
 			details: ['50% cotton', '30% wool', '20% polyester'],
+			product: 'Socks',
+			reviews: [],
+			selectedVariant: 0,
 			variants: [
 				{
 					id: 2234,
@@ -67,8 +68,7 @@ app.component('product-display', {
 					image: './assets/images/socks_blue.jpg',
 					quantity: 0
 				}
-			],
-			reviews: []
+			]
 		}
 	},
 	methods: {
